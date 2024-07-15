@@ -1,0 +1,20 @@
+.user-icon{
+    height: 30px;
+    width: 30px;
+    margin-right: 20px;
+}
+
+.table-scroll{
+    height: calc(100vh - 175px);
+    overflow-y: auto;
+}
+
+.search-input{
+    max-width: 400px;
+    margin-left: 20px;
+}
+
+.disablepage{
+    pointer-events: none;
+    color: aliceblue;
+}
