@@ -47,7 +47,7 @@
           </tbody>
         </table>
         <div>
-          <nav aria-label="Page navigation example">
+          <nav aria-label="Page navigation example" *ngIf="!search">
             <ul class="pagination">
               <li class="page-item">
                 <a class="page-link" [ngClass]=" currentPage === 1 ? 'disablepage':''"  href="#" (click)="onPrev()" aria-label="Previous">
