@@ -1,11 +1,21 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { MainPanelComponent } from './component/main-panel/main-panel.component';
+import { RecipeComponent } from './component/recipe/recipe.component';
+import { UserListComponent } from './component/user-list/user-list.component';
 
 const routes: Routes = [
   {
-    path:'**',
-    component:MainPanelComponent
+    path:'',
+    pathMatch:'full',
+    component:UserListComponent
+  },
+  {
+    path:'users',
+    component:UserListComponent
+  },
+  {
+    path:'recipes',
+    component:RecipeComponent
   }
 ];
 

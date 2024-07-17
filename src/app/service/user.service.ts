@@ -8,11 +8,19 @@ export class UserService {
 
   constructor(private http:HttpClient) { }
 
-  getUser(skip = 0, limit = 10){
+  getAllUsers(skip = 0, limit = 10){
     return this.http.get(`https://dummyjson.com/users?limit=${limit}&skip=${skip}`);
   }
+  
+  getAllRecipes(skip = 0, limit = 10){
+    return this.http.get(`https://dummyjson.com/recipes?limit=${limit}&skip=${skip}`);
+  }
 
-  getSearch(name:string){
+  searchUser(name:string){
     return this.http.get(`https://dummyjson.com/users/search?q=${name}`);
+  }
+
+  searchRecipe(name:string){
+    return this.http.get(`https://dummyjson.com/recipes/search?q=${name}`);
   }
 }

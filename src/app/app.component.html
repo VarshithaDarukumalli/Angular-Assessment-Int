@@ -1,7 +1,10 @@
 <div id="wrapper">
   <app-side-bar></app-side-bar>
   <div id="content-wrapper" class="d-flex flex-column">
-    <router-outlet></router-outlet>
+    <div id="content">
+      <app-header></app-header>
+      <router-outlet></router-outlet>
+  </div>
     <app-footer></app-footer>
   </div>
 </div>

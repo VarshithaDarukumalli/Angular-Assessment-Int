@@ -1,13 +1,14 @@
 <div class="container-fluid table-scroll">
   <div class="card shadow mb-4">
     <div class="card-header py-3">
-      <span class="listheading">List of Users</span>
+      <span class="listheading">List of Recipes</span>
+
       <input
         class="form-control form-control-sm search-input"
         [(ngModel)]="search"
         (ngModelChange)="onInputChange()"
         type="text"
-        placeholder="Search for users"
+        placeholder="Search for recipes"
       />
     </div>
     <div class="card-body">
@@ -16,27 +17,23 @@
           <thead>
             <tr>
               <th>Name</th>
-              <th>Designation</th>
-              <th>Date of Birth</th>
-              <th>Phone</th>
-              <th>Email</th>
-              <th>Country</th>
+              <th>Ingredients</th>
+              <th>Instructions</th>
+              <th>Cuisine</th>
+              <th>Calories</th>
+              <th>Difficulty</th>
             </tr>
           </thead>
           <tbody>
-            <tr *ngFor="let user of userList">
+            <tr *ngFor="let recipe of recipeList">
               <td>
-                <b>{{ user.firstName }} {{ user.lastName }}</b>
+                <b>{{ recipe.name }}</b>
               </td>
-              <td>{{ user.company.title }}</td>
-              <td>{{ user.birthDate | date : "dd/MM/yyyy" }}</td>
-              <td>
-                <a href="tel:{{ user.phone }}">{{ user.phone }}</a>
-              </td>
-              <td>
-                <a href="mailto:{{ user.email }}">{{ user.email }}</a>
-              </td>
-              <td>{{ user.address.country }}</td>
+              <td>{{ recipe.ingredients }}</td>
+              <td>{{ recipe.instructions }}</td>
+              <td>{{ recipe.cuisine }}</td>
+              <td>{{ recipe.caloriesPerServing }}</td>
+              <td>{{ recipe.difficulty }}</td>
             </tr>
           </tbody>
         </table>
@@ -47,7 +44,6 @@
                 <a
                   class="page-link"
                   [ngClass]="currentPage === 1 ? 'disablepage' : ''"
-                  href="#"
                   (click)="onPrev()"
                   aria-label="Previous"
                 >
@@ -57,7 +53,6 @@
               <li class="page-item">
                 <a
                   class="page-link"
-                  href="#"
                   [ngClass]="currentPage === totalPage ? 'disablepage' : ''"
                   (click)="onNext()"
                   aria-label="Next"
